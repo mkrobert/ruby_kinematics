@@ -1,3 +1,7 @@
+      #if (t == nil)
+      #  t = findT(vI, vF, a, d, t)
+      #end
+
 include Math
 
 class Kinematics
@@ -88,14 +92,15 @@ class Kinematics
   end
 
   def findAll (vI, vF, a, d, t)
-    puts "vI: " + findVI(vI, vF, a, d, t).to_s 
-    puts "vF: " + findVF(vI, vF, a, d, t).to_s 
-    puts "a: " + findA(vI, vF, a, d, t).to_s 
-    puts "d: " + findD(vI, vF, a, d, t).to_s 
-    puts "t: " + findT(vI, vF, a, d, t).to_s 
+    return [findVI(vI, vF, a, d, t),
+            findVF(vI, vF, a, d, t),
+            findA(vI, vF, a, d, t),
+            findD(vI, vF, a, d, t),
+            findT(vI, vF, a, d, t)]
   end
-
 end
 
-calculate = Kinematics.new
-calculate.findAll(0,nil,-9.8,-27,nil)
+
+
+#kineq = Kinematics.new
+#puts kineq.findAll(0,nil,-9.8,-27,nil).to_s
